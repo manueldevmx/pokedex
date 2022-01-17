@@ -11,13 +11,13 @@ const Tab = createBottomTabNavigator();
 export default function Navigation() {
   return (
     <Tab.Navigator>
-      <Tab.Screen
-        name="Favorite"
-        component={FavoriteNavigation}
+          <Tab.Screen
+        name="Account"
+        component={AccountNavigation}
         options={{
-          tabBarLabel: "Favoritos",
+          tabBarLabel: "Mi cuenta",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="heart" color={color} size={size} />
+            <Icon name="user" color={color} size={size} />
           ),
         }}
       />
@@ -31,16 +31,17 @@ export default function Navigation() {
         }}
       />
 
-      <Tab.Screen
-        name="Account"
-        component={AccountNavigation}
+<Tab.Screen
+        name="Favorite"
+        component={FavoriteNavigation}
         options={{
-          tabBarLabel: "Mi cuenta",
+          tabBarLabel: "Favoritos",
           tabBarIcon: ({ color, size }) => (
-            <Icon name="user" color={color} size={size} />
+            <Icon name="heart" color={color} size={size} />
           ),
         }}
       />
+
     </Tab.Navigator>
   );
 }

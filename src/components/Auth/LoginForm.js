@@ -11,9 +11,12 @@ import { Button } from "react-native-elements";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { user, userDetails } from "../../utils/userDB";
+import useAuth from "../../hooks/useAuth";
 
 export default function LoginForm() {
   const [error, setError] = useState("");
+  const { login } = useAuth();
+
   const formik = useFormik({
     initialValues: initialValues(),
     validationSchema: Yup.object(validationSchema()),
@@ -23,12 +26,14 @@ export default function LoginForm() {
       const { username, password } = formValue;
 
       if (username !== user.username || password !== user.password) {
+        
         setError("El usuario o la contraseña no son correcto");
       } else {
-        console.log("Login correcto");
-        console.log(userDetails);
+        login(userDetails);
+        console.log(userDetails)
       }
     },
+    
   });
 
   return (
