@@ -57,7 +57,7 @@ export default function LoginForm() {
       <Button
         title="Iniciar Sesion"
         buttonStyle={{
-          backgroundColor: "#6AC471",
+          backgroundColor: "#61F4AD",
           margin: 6,
           marginTop: 6,
           marginBottom: 0,
@@ -73,7 +73,7 @@ export default function LoginForm() {
 
       <Image
         source={require("../../assets/Seek.png")}
-        style={{ width: 200, height: 200, top: 66, marginLeft: 130 }}
+        style={{ width: 200, height: 200, top: 60, marginLeft: 130 }}
       />
     </View>
   );
@@ -96,15 +96,15 @@ function validationSchema() {
 const styles = StyleSheet.create({
   container:{
     height: "100%",
-    backgroundColor: "#CFF6FC"
+    backgroundColor: "#ECECEC"
   },
   title: {
     textAlign: "center",
-    fontSize: 28,
+    fontSize: 39,
     fontWeight: "bold",
     marginTop: 50,
     marginBottom: 15,
-    color: "orange",
+    color: "#0F4E66",
 
   },
   input: {
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: 10,
-    borderColor: "pink",
+    borderColor: "#0F4E66",
   },
   error: {
     textAlign: "center",

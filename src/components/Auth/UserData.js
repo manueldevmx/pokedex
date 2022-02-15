@@ -1,5 +1,7 @@
 import React from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+import { Button } from "react-native-elements";
+
 import useAuth from "../../hooks/useAuth";
 
 export default function UserData() {
@@ -16,10 +18,16 @@ export default function UserData() {
         <ItemMenu title="Nombre" text={`${auth.firstName} ${auth.lastName}`} />
         <ItemMenu title="Username" text={auth.username} />
         <ItemMenu title="Email" text={auth.email} />
-        <ItemMenu title="Total Favoritos" text={`0 pokemons`} />
+       
       </View>
 
-      <Button title="Desconectarse" onPress={logout} style={styles.btnLogoun} />
+      <Button title="Cerrar Sesion" onPress={logout} buttonStyle={{
+                    backgroundColor: "#F79C9C",
+                    margin: 6,
+                    marginTop: 6,
+                    marginBottom: 0,
+                    borderRadius: 96,
+                  }} />
     </View>
   );
 }
@@ -41,6 +49,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   titleBlock: {
+    marginTop:18,
     marginBottom: 30,
   },
   title: {
@@ -61,7 +70,8 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     width: 120,
   },
-  btnLogoun: {
+  btnLogOut: {
     paddingTop: 20,
+  
   },
 });

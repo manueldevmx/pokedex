@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Text } from "react-native";
+import { Text,StyleSheet, Image } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import { getPokemonsFavoriteApi } from "../api/favorite";
 import { getPokemonDetailsApi } from "../api/pokemon";
@@ -37,8 +37,22 @@ export default function Favorite() {
   );
 
   return !auth ? (
-    <Text>Usuario no logeado</Text>
+   
+    <Text style={styles.title}>Para visualizar tus favoritos debes iniciar sesión</Text>
+      
   ) : (
     <PokemonList pokemons={pokemons} />
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    textAlign: "center",
+    fontSize: 23,
+    fontWeight: "bold",
+    marginTop: 50,
+   marginHorizontal: 15,
+    color: "#0F4E66",
+
+  },
+})

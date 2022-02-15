@@ -10,7 +10,16 @@ const Tab = createBottomTabNavigator();
 
 export default function Navigation() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+       
+        tabBarOptions={{
+          inactiveTintColor: "#0F4E66",
+          activeTintColor: "#61F4AD",
+        }}
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ color }) => screenOptions(route, color),
+        })}
+      >
           <Tab.Screen
         name="Account"
         component={AccountNavigation}
